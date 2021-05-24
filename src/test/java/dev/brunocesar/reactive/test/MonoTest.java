@@ -9,7 +9,6 @@ import reactor.core.publisher.Mono;
 import reactor.test.StepVerifier;
 
 import java.util.Locale;
-import java.util.concurrent.Flow;
 
 /**
  * Reactive Streams
@@ -141,7 +140,7 @@ public class MonoTest {
     public void monoDoOnErrorResume() {
         String name = "Bruno Cesar";
         Mono<Object> error = Mono.error(new IllegalArgumentException())
-                .onErrorResume(s ->{
+                .onErrorResume(s -> {
                     LOG.info("inside on Error Resume");
                     return Mono.just(name);
                 })
@@ -158,7 +157,7 @@ public class MonoTest {
         String name = "Bruno Cesar";
         Mono<Object> error = Mono.error(new IllegalArgumentException())
                 .onErrorReturn("EMPTY")
-                .onErrorResume(s ->{
+                .onErrorResume(s -> {
                     LOG.info("inside on Error Resume");
                     return Mono.just(name);
                 })
