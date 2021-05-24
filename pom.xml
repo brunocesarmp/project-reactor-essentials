@@ -14,9 +14,15 @@
         <reactor-core.version>3.4.6</reactor-core.version>
         <junit-jupiter-api.version>5.7.2</junit-jupiter-api.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
+        <blockhound.version>1.0.6.RELEASE</blockhound.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>io.projectreactor.tools</groupId>
+            <artifactId>blockhound</artifactId>
+            <version>${blockhound.version}</version>
+        </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-core</artifactId>
